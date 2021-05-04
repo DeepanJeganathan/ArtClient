@@ -36,3 +36,25 @@
     transform: rotate(360deg);
   }
 }
+
+/* navigation */
+.main-nav {
+  height: 100px;
+  font-weight: 400;
+  font-size: 1.5rem;
+  border-bottom: 1px solid black;
+}
+.navbar-brand {
+  font-weight: 600;
+}
+
+/* jumborton */
+
+.jumbotron {
+  height: 300px;
+  font-weight: 300;
+}
+
+.jumbotron h1 {
+  font-weight: 700 !important;
+}
