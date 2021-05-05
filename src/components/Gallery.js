@@ -15,7 +15,7 @@ function Gallery() {
   ];
 
   const gallery = data.map((x) => (
-    <div className="col-4">
+    <div className="col-md-4 col-sm-6">
       <Card className="m-3">
         <Card.Img variant="top" src={bird} />
         <Card.Body>
