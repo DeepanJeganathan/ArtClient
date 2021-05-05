@@ -42,7 +42,6 @@
   height: 100px;
   font-weight: 400;
   font-size: 1.5rem;
-  border-bottom: 1px solid black;
 }
 .navbar-brand {
   font-weight: 600;
@@ -51,10 +50,17 @@
 /* jumborton */
 
 .jumbotron {
-  height: 300px;
+  height: 600px;
   font-weight: 300;
+  color: seashell;
+  background-color: #222b32 !important;
 }
 
 .jumbotron h1 {
   font-weight: 700 !important;
+}
+
+.card {
+  -webkit-box-shadow: 0px 1px 13px 0px #000000;
+  box-shadow: 0px 1px 13px 0px #000000;
 }
