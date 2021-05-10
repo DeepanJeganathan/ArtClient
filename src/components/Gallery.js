@@ -1,37 +1,52 @@
-import { Card, CardDeck, Row } from "react-bootstrap";
+import { useEffect } from "react";
+import { Card, Row } from "react-bootstrap";
+import { useSelector,useDispatch } from "react-redux";
 import bird from "../images/bird.png";
+import { fetch_art } from "../reducer/Art/artActions";
 
 function Gallery() {
-  const data = [
-    { name: "john", age: 28 },
-    { name: "bobn", age: 38 },
-    { name: "lohn", age: 28 },
-    { name: "john", age: 28 },
-    { name: "bobn", age: 38 },
-    { name: "lohn", age: 28 },
-    { name: "john", age: 28 },
-    { name: "bobn", age: 38 },
-    { name: "lohn", age: 28 },
-  ];
 
-  const gallery = data.map((x) => (
+   const results= useSelector(state=>state);
+  const dispatch = useDispatch();
+
+  useEffect(()=>{ 
+    console.log("use effect ran")
+fetch_data() 
+  },[])
+
+  const fetch_data=()=>{
+    dispatch(fetch_art());
+  }
+
+
+
+//  const gallery="hello";
+
+  const gallery = results.data.map((x) => (
     <div className="col-md-4 col-sm-6">
       <Card className="m-3">
-        <Card.Img variant="top" src={bird} />
+        <Card.Img variant="top" src={x.imageURL} />
         <Card.Body>
-          <Card.Title>{x.name}</Card.Title>
+        
+          <Card.Title>{x.title}</Card.Title>
           <Card.Text>
-            This is a wider card with supporting text below as a natural lead-in
-            to additional content. This content is a little bit longer.
+           Created by {x.artist} and installed  on {x.yeaR_INSTALLED}.
           </Card.Text>
         </Card.Body>
         <Card.Footer>
-          <small className="text-muted">Last updated 3 mins ago</small>
+          <small className="text-muted">{x.location}</small>
         </Card.Footer>
       </Card>
     </div>
   ));
-  return <Row>{gallery}</Row>;
+if (results.loading==false) {
+    return <Row>{gallery}</Row>;
+}
+
+else{
+    return <Row><h2>Loading</h2></Row>;
+}
+
 }
 
 export default Gallery;
