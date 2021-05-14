@@ -23,14 +23,7 @@ function Main() {
         </Container>
       </Jumbotron>
       <Row>
-        <div className="col-6 offset-3">
-          <ListGroup horizontal>
-            <ListGroup.Item>This</ListGroup.Item>
-            <ListGroup.Item>ListGroup</ListGroup.Item>
-            <ListGroup.Item>renders</ListGroup.Item>
-            <ListGroup.Item>horizontally!</ListGroup.Item>
-          </ListGroup>
-        </div>
+        
       </Row>
     </>
   );
