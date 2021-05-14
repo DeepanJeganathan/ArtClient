@@ -17,6 +17,9 @@ fetch_data()
   const fetch_data=()=>{
     dispatch(fetch_art());
   }
+ 
+
+  
 
   function OpenModal(e){
 
@@ -39,11 +42,14 @@ fetch_data()
 //  const gallery="hello";
 
   const gallery = results.data.map((x) => (
-    <div  className="col-md-6 col-sm-12 col-xl-4">
-      <Card id={x.artModelId} onMouseOver={ShowPlusIcon} onMouseOut={RemovePlusIcon} onClick={OpenModal} className="m-3" >
-        {/* <Card.Img variant="top" src={x.imageURL} /> */}
-        <Card.Body>        
-          <Card.Title >{x.title}</Card.Title>
+
+    <div className=" col-md-4 col-sm-6">
+      <Card   className="m-3 imageCard ">
+      <i class="fas fa-plus plusIcon"></i>
+        <Card.Img variant="top" src={x.imageURL} />
+        <Card.Body>
+        
+          <Card.Title>{x.title}</Card.Title>
           <Card.Text>
            Created by {x.artist} and installed on {x.yeaR_INSTALLED}.
            {x.description}
@@ -57,7 +63,7 @@ fetch_data()
   ));
   
 if (results.loading==false) {
-    return <Row>{gallery}</Row>;
+    return <Row className="artwork">{gallery}</Row>;
 }
 
 else{

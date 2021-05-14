@@ -44,8 +44,20 @@
   font-size: 1.5rem;
 }
 .navbar-brand {
-  font-size: 2.15rem !important;
+  font-size: 1.75rem !important;
   font-weight: 700;
+}
+.navbar-brand>span {
+  background-size:  100% 15%;
+  background-repeat: repeat-x;
+  background-position: left 0% bottom 10%;
+ }
+ .rainbow {
+   background-image: linear-gradient(90deg, hsl(284,91%,69%) 0%, hsl(284,91%,69%) 12.5%,hsl(329,91%,69%) 12.5%, hsl(329,91%,69%) 25%,hsl(14,91%,69%) 25%, hsl(14,91%,69%) 37.5%,hsl(59,91%,69%) 37.5%, hsl(59,91%,69%) 50%,hsl(104,91%,69%) 50%, hsl(104,91%,69%) 62.5%,hsl(149,91%,69%) 62.5%, hsl(149,91%,69%) 75%,hsl(194,91%,69%) 75%, hsl(194,91%,69%) 87.5%,hsl(239,91%,69%) 87.5%, hsl(239,91%,69%) 100%);
+}
+
+.nav-link{
+  font-size: 1.25rem;
 }
 
 /* jumborton */
@@ -54,14 +66,57 @@
   height: 600px;
   font-weight: 300;
   color: seashell;
-  background-color: #222b32 !important;
+  /* background-color: #222b32 !important; */
+  background-image: linear-gradient(rgba(0,0,0,.7), rgba(0,0,0,.7)),url('./images/mainBackgroudn.jpg') ;
+  background-repeat: no-repeat;
+  background-size: cover ;
+
+ 
+
 }
 
 .jumbotron h1 {
   font-weight: 700 !important;
 }
 
+/* Gallery */
 .card {
   -webkit-box-shadow: 0px 1px 13px 0px #000000;
   box-shadow: 0px 1px 13px 0px #000000;
 }
+
+.card-img-top {
+  max-height: 200px;
+  min-height: 150px;
+  object-fit: cover;
+}
+
+.artwork{
+  max-height: 500px;
+}
+
+.imageCard{
+
+  transition:  0.5s ease;
+}
+.imageCard:hover{
+ opacity: .7;
+}
+
+ .plusIcon{
+  display: none;
+  color: rgb(0, 0, 0);
+  font-size: 2rem;
+  position: absolute;
+  left:45%;
+  top:40%;
+
+
+} 
+.imageCard:hover .plusIcon{
+ display: block;
+ cursor: pointer;
+ 
+
+}
+

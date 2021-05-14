@@ -4,7 +4,9 @@ function Navigation() {
   return (
     <Navbar className="main-nav" variant="light">
       <Navbar.Brand href="#home">
-        <i class="fas fa-camera"></i> Public Art Toronto
+        
+        
+ <i class="fas fa-camera"></i><span class="rainbow">Public Art Toronto</span>
       </Navbar.Brand>
       <Navbar.Toggle />
       <Navbar.Collapse className="justify-content-end">
