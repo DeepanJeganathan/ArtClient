@@ -7,9 +7,40 @@ import {
   Row,
   ListGroup,
   Nav,
+  Pagination,
 } from "react-bootstrap";
+import { useDispatch } from "react-redux";
+import { fetch_art } from "../reducer/Art/artActions";
 
 function Main() {
+
+  let pageSelected = 1;
+  const dispatch= useDispatch();
+  function GetPage(e){
+  let pageNumber= e.target.innerText;
+  dispatch(fetch_art(pageNumber));
+  pageSelected=pageNumber;
+
+      
+  }
+ let active;
+  let items = [];
+  for (let number = 1; number <= 5; number++) {
+    items.push(
+      <Pagination.Item onClick={GetPage} key={number} active={pageSelected===active}>
+        {number}
+      </Pagination.Item>,
+    );
+  }
+  
+  const paginationBasic = (
+    <div>
+      <Pagination size="lg">{items}</Pagination>
+      <br />
+  
+    </div>
+  );
+
   return (
     <>
       <Jumbotron fluid className=" d-flex align-items-center">
@@ -22,16 +53,7 @@ function Main() {
           </Form>
         </Container>
       </Jumbotron>
-      <Row>
-        <div className="col-6 offset-3">
-          <ListGroup horizontal>
-            <ListGroup.Item>This</ListGroup.Item>
-            <ListGroup.Item>ListGroup</ListGroup.Item>
-            <ListGroup.Item>renders</ListGroup.Item>
-            <ListGroup.Item>horizontally!</ListGroup.Item>
-          </ListGroup>
-        </div>
-      </Row>
+     {paginationBasic}
     </>
   );
 }

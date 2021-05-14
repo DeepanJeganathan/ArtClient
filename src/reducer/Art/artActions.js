@@ -25,11 +25,11 @@ export const fetch_art_fail=(errorMsg)=>{
     }
 }
 
-export const fetch_art=()=>{
+export const fetch_art=(num)=>{
 
     console.log("fetch art hit at art Action")
     return(dispatch)=>{
         dispatch(fetch_art_request());
-        axios.get(url).then(res=>dispatch(fetch_art_success(res.data))).catch(err=>dispatch(fetch_art_fail(err.msg)));
+        axios.get(url,{params:{PageNumber:num,PageSize:20}}).then(res=>dispatch(fetch_art_success(res.data))).catch(err=>dispatch(fetch_art_fail(err.msg)));
     }
 }
