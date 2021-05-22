@@ -1,3 +1,4 @@
+import { useState } from "react";
 import {
   Container,
   Form,
@@ -14,14 +15,26 @@ import { fetch_art } from "../reducer/Art/artActions";
 
 function Main() {
 
+  const [searchValue, setSearchValue]=useState("");
+  function HandleChange(e){
+    setSearchValue(e.target.value);
+    console.log(searchValue)
+  }
+
   let pageSelected = 1;
   const dispatch= useDispatch();
   function GetPage(e){
   let pageNumber= e.target.innerText;
   dispatch(fetch_art(pageNumber));
   pageSelected=pageNumber;
-
       
+  }
+
+
+  function HandleSubmit(e){
+    e.preventDefault();
+    dispatch(fetch_art(1,searchValue));
+    setSearchValue("");
   }
  let active;
   let items = [];
@@ -47,9 +60,9 @@ function Main() {
         <Container>
           <h1>Discover Toronto's Art</h1>
           <p>Browse through Toronto's Art scattered throughout the city</p>
-          <Form className="justify-content-center" inline>
-            <FormControl type="text" placeholder="Search" className="col-10 " />
-            <Button variant="outline-light">Search</Button>
+          <Form className="justify-content-center" onSubmit={HandleSubmit} inline>
+            <FormControl type="text" placeholder="Search" onChange={HandleChange} value={searchValue} className="col-10 " />
+            <Button  type='submit' variant="outline-light">Search</Button>
           </Form>
         </Container>
       </Jumbotron>

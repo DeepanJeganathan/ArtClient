@@ -45,7 +45,7 @@ function Gallery() {
   //art work cards ui
   const gallery = results.data.map((x) => (
     <div className=" col-md-4 col-sm-6">
-      <Card className="m-3 imageCard ">
+      <Card className=" card-artwork m-3 imageCard ">
         <i className="fas fa-plus plusIcon" onClick={() => ShowModal(x)}></i>
         {/* modal begin */}
         <Modal x={x} />
