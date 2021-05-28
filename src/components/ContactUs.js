@@ -1,7 +1,7 @@
 function ContactUs() {
   return (
     <>
-      <div class="bg-light">
+      <div class="bg-light contact-us">
         <div class="container py-5">
           <div class="row h-100 align-items-center py-5">
             <div class="col-lg-6">

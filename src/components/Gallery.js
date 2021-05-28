@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { Card, Row, Spinner } from "react-bootstrap";
 import { useSelector, useDispatch } from "react-redux";
 import bird from "../images/bird.png";
-import { fetch_art } from "../reducer/Art/artActions";
+import { fetch_art, fetch_count } from "../reducer/Art/artActions";
 import Modal from './Modal'
 
 function Gallery() {
@@ -13,13 +13,17 @@ function Gallery() {
   //execute on pageload
   useEffect(() => {
     console.log("use effect ran")
-    fetch_data()
+     fetch_data()
+    fetch_total()
   }, [])
 
   const fetch_data = () => {
     dispatch(fetch_art());
   }
 
+  const fetch_total = () => {
+    dispatch(fetch_count());
+  }
 
   function ShowModal(x) {
 
@@ -44,8 +48,8 @@ function Gallery() {
 
   //art work cards ui
   const gallery = results.data.map((x) => (
-    <div className=" col-md-4 col-sm-6">
-      <Card className=" card-artwork m-3 imageCard ">
+    <div className=" col-md-4 col-sm-6 col-xl-3 d-flex ">
+      <Card className=" card-artwork m-2 imageCard ">
         <i className="fas fa-plus plusIcon" onClick={() => ShowModal(x)}></i>
         {/* modal begin */}
         <Modal x={x} />

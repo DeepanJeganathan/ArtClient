@@ -81,6 +81,7 @@
 
 /* Gallery */
 .card-artwork {
+  
   -webkit-box-shadow: 0px 1px 13px 0px #000000;
   box-shadow: 0px 1px 13px 0px #000000;
 }
@@ -216,3 +217,14 @@
 .faq{
   display: none;
 }
+
+/* contact us */
+
+.contact-us{
+  height: 100vh;
+  background-image: url('./images/contactUsPage.png');
+  background-position-x: 300px;
+  background-repeat: no-repeat;
+  background-size:cover ; 
+}
+

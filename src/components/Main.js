@@ -10,12 +10,13 @@ import {
   Nav,
   Pagination,
 } from "react-bootstrap";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { fetch_art } from "../reducer/Art/artActions";
 
 function Main() {
 
   const [searchValue, setSearchValue]=useState("");
+  const pageCount = useSelector(state => state.total)/20;
   function HandleChange(e){
     setSearchValue(e.target.value);
     console.log(searchValue)
@@ -38,7 +39,7 @@ function Main() {
   }
  let active;
   let items = [];
-  for (let number = 1; number <= 5; number++) {
+  for (let number = 1; number <= pageCount; number++) {
     items.push(
       <Pagination.Item onClick={GetPage} key={number} active={pageSelected===active}>
         {number}
