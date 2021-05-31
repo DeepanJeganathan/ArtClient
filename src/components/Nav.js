@@ -1,16 +1,15 @@
 import { Navbar, Nav } from "react-bootstrap";
-import { BrowserRouter as Link } from "react-router-dom";
 import { LinkContainer } from "react-router-bootstrap";
 
 function Navigation() {
   return (
-    <Navbar className="main-nav" variant="light">
+    <Navbar expand="lg" className="main-nav" variant="light">
       <Navbar.Brand href="#home">
-        <i class="fas fa-camera"></i>
-        <span class="rainbow">Public Art Toronto</span>
+        <i className="fas fa-camera"></i>
+        <span className="rainbow">Public Art Toronto</span>
       </Navbar.Brand>
-      <Navbar.Toggle />
-      <Navbar.Collapse className="justify-content-end">
+      <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+      <Navbar.Collapse id="responsive-navbar-nav" className="justify-content-end">
         <Nav className="ml-auto">
           <LinkContainer to="/">
             <Nav.Link>Home</Nav.Link>
@@ -24,6 +23,7 @@ function Navigation() {
         </Nav>
       </Navbar.Collapse>
     </Navbar>
+ 
   );
 }
 

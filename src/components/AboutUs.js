@@ -1,11 +1,11 @@
-import { data } from "jquery";
+
 import { Nav } from "react-bootstrap";
 
 function AboutUs() {
 
 
 
-  const Data = () => {
+    const Data = () => {
     const data = document.querySelector('.data');
     const faq = document.querySelector('.faq');
     const upcoming = document.querySelector('.upcoming');
@@ -34,12 +34,12 @@ function AboutUs() {
 
   return (
     <>
-      <div class="bg-light">
-        <div class="container py-5">
-          <div class="row h-100 align-items-center py-5">
-            <div class="col-lg-6">
-              <h1 class="display-4">Our Mission</h1>
-              <p class="lead text-muted mb-0">
+      <div className="bg-light">
+        <div className="container py-5">
+          <div className="row h-100 align-items-center py-5">
+            <div className="col-lg-6">
+              <h1 className="display-4">Our Mission</h1>
+              <p className="lead text-muted mb-0">
                 To  showcase various arts throughout the city and create a community where others who love art can comment and upload new discoveries.
               </p>
 
@@ -77,9 +77,9 @@ function AboutUs() {
 
           </div>
           <div className="upcoming">
-            <ul class="list-group list-group-flush w-50  ">
-              <li class="list-group-item bg-light">Build a mobile friendly app better experience.</li>
-              <li class="list-group-item bg-light"> Form for visitors to submit new locations instead of sending it through email.</li>
+            <ul className="list-group list-group-flush w-50  ">
+              <li className="list-group-item bg-light">Build a mobile friendly app better experience.</li>
+              <li className="list-group-item bg-light"> Form for visitors to submit new locations instead of sending it through email.</li>
             </ul>
           </div>
         </div>

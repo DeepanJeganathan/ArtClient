@@ -5,9 +5,6 @@ import {
   FormControl,
   Jumbotron,
   Button,
-  Row,
-  ListGroup,
-  Nav,
   Pagination,
 } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
@@ -19,7 +16,7 @@ function Main() {
   const pageCount = useSelector(state => state.total)/20;
   function HandleChange(e){
     setSearchValue(e.target.value);
-    console.log(searchValue)
+ 
   }
 
   let pageSelected = 1;
@@ -41,15 +38,21 @@ function Main() {
   let items = [];
   for (let number = 1; number <= pageCount; number++) {
     items.push(
-      <Pagination.Item onClick={GetPage} key={number} active={pageSelected===active}>
+     
+      <Pagination.Item className=" d-flex col-1 justify-content-center" onClick={GetPage} key={number} active={pageSelected===active}>
         {number}
       </Pagination.Item>,
     );
   }
   
   const paginationBasic = (
-    <div>
-      <Pagination size="lg">{items}</Pagination>
+    <div >
+     
+      <Pagination className="row justify-content-center col-10 offset-1 " size="sm">{items.splice(0,items.length/2)}</Pagination>
+    
+      <Pagination  className="row justify-content-center col-10 offset-1 " size="sm">{items}</Pagination>
+     
+     
       <br />
   
     </div>
