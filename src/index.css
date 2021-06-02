@@ -3,7 +3,8 @@ body {
   font-family: "Oswald", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  min-width: 350px;
+  min-width: 390px;
+  height: 100vh;
 }
 
 code {

@@ -3,7 +3,7 @@ import { LinkContainer } from "react-router-bootstrap";
 
 function Navigation() {
   return (
-    <Navbar expand="lg" className="main-nav" variant="light">
+    <Navbar expand="lg" className="main-nav d-inline" variant="light">
       <Navbar.Brand href="#home">
         <i className="fas fa-camera"></i>
         <span className="rainbow">Public Art Toronto</span>

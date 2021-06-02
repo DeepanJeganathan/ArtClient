@@ -106,7 +106,7 @@ position: relative;
   transition:  0.5s ease;
 }
 .imageCard:hover{
- opacity: .7;
+opacity: .6;
 }
 
  .plusIcon{
@@ -116,13 +116,12 @@ position: relative;
   position: absolute;
   left:45%;
   top:40%;
-
-
+  z-index: 10 !important;
+  opacity: 1 !important;
 }
 .imageCard:hover .plusIcon{
  display: block;
  cursor: pointer;
-
 
 }
 
@@ -211,6 +210,12 @@ position: relative;
   margin-bottom: 2px;
 }
 
+.modal-card{
+  -webkit-box-shadow: 5px 2px 9px 1px rgba(0,0,0,0.44); 
+  box-shadow: 5px 2px 9px 1px rgba(0,0,0,0.44);
+
+}
+
 /* comment form */
 .comment-form{
   display: none;
@@ -226,6 +231,10 @@ position: relative;
 }
 /* about us */
 
+.about-container{
+  height: 40vh;
+}
+
 .data{
   display: none;
 }
@@ -239,10 +248,19 @@ position: relative;
 /* contact us */
 
 .contact-us{
- 
+ height: 100vh;
   background-image: url('./images/contactUsPage.png');
   background-repeat: no-repeat;
-  background-size:cover ; 
- 
+  background-size:cover; 
+  background-position:right ;
 }
 
+
+/* 375px and smaller */
+@media only screen and (max-width: 430px) {
+  .navbar-brand {
+    font-size: 1.5rem !important;
+    font-weight: 700;
+  }
+  
+}

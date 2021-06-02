@@ -1,8 +1,9 @@
 import axios from 'axios'
 import { FETCH_ART_FAIL, FETCH_ART_REQUEST, FETCH_ART_SUCCESS, FETCH_COMMENT_REQUEST, FETCH_TOTAL, POST_COMMENT_FAIL, POST_COMMENT_SUCCESS } from "./artTypes"
 
-const url = "http://localhost:50793/api/art"
-const comment_url = "http://localhost:50793/api/comment"
+//http://192.168.0.105:8080/
+const url = "http://192.168.0.105:8080/api/art"
+const comment_url = "http://192.168.0.105:8080/api/comment"
 
 
 export const fetch_art_request = () => {
@@ -63,7 +64,7 @@ export const fetch_art = (num, searchTerm) => {
    
     return (dispatch) => {
         dispatch(fetch_art_request())
-        axios.get(url, { params: { PageNumber: num, PageSize: 21, search: searchTerm } }).then(res => dispatch(fetch_art_success(res.data))).catch(err => dispatch(fetch_art_fail(err.msg)))
+        axios.get(url, { params: { PageNumber: num, PageSize: 21, search: searchTerm } }).then(res => dispatch(fetch_art_success(res.data))).catch(err => {dispatch(fetch_art_fail(err.msg));console.log(err.msg)})
     }
 }
 

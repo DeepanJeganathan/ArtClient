@@ -64,9 +64,9 @@ function Main() {
         <Container>
           <h1>Discover Toronto's Art</h1>
           <p>Browse through Toronto's Art scattered throughout the city</p>
-          <Form className="justify-content-center" onSubmit={HandleSubmit} inline>
-            <FormControl type="text" placeholder="Search" onChange={HandleChange} value={searchValue} className="col-10 " />
-            <Button  type='submit' variant="outline-light">Search</Button>
+          <Form  className="justify-content-center " onSubmit={HandleSubmit} inline>
+            <FormControl   type="text" placeholder="Search" onChange={HandleChange} value={searchValue} className="col-10 " />
+            <Button className="m-2"  type='submit' variant="outline-light">Search</Button>
           </Form>
         </Container>
       </Jumbotron>

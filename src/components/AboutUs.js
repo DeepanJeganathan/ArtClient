@@ -36,7 +36,7 @@ function AboutUs() {
     <>
       <div className="bg-light">
         <div className="container py-5">
-          <div className="row h-100 align-items-center py-5">
+          <div className="row about-container align-items-center py-5">
             <div className="col-lg-6">
               <h1 className="display-4">Our Mission</h1>
               <p className="lead text-muted mb-0">
